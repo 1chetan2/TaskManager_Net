@@ -50,6 +50,56 @@ namespace JwtApi.Migrations
                     b.ToTable("Students");
                 });
 
+            modelBuilder.Entity("JwtApi.Models.TaskChild", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("StatusValue")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TaskItemId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TaskItemId")
+                        .IsUnique();
+
+                    b.ToTable("TaskChilds");
+                });
+
+            modelBuilder.Entity("JwtApi.Models.TaskItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Hours")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Task")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TaskName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TaskItems");
+                });
+
             modelBuilder.Entity("JwtApi.Models.Usertb", b =>
                 {
                     b.Property<int>("Id")
@@ -69,6 +119,23 @@ namespace JwtApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usertbs");
+                });
+
+            modelBuilder.Entity("JwtApi.Models.TaskChild", b =>
+                {
+                    b.HasOne("JwtApi.Models.TaskItem", "TaskItem")
+                        .WithOne("TaskStatus")
+                        .HasForeignKey("JwtApi.Models.TaskChild", "TaskItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TaskItem");
+                });
+
+            modelBuilder.Entity("JwtApi.Models.TaskItem", b =>
+                {
+                    b.Navigation("TaskStatus")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

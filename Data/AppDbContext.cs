@@ -11,5 +11,9 @@ namespace JwtApi.Data
 
         public DbSet<Usertb> Usertbs { get; set; }
         public DbSet<Student> Students { get; set; }
+
+        public DbSet<TaskItem> TaskItems { get; set; }
+        public DbSet<TaskChild> TaskChilds { get; set; }
+
     }
 }

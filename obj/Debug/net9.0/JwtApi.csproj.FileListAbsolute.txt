@@ -8,7 +8,9 @@ C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\JwtApi.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\JwtApi.pdb
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Azure.Core.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Azure.Identity.dll
+C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Humanizer.dll
+C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\MailKit.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
@@ -38,6 +40,7 @@ C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dl
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Microsoft.OpenApi.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\MimeKit.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Mono.TextTemplating.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Asp.net_task\JwtApi\JwtApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -142,6 +145,7 @@ C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\JwtApi.AssemblyInfo.cs
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\JwtApi.csproj.CoreCompileInputs.cache
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\JwtApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\JwtApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\JwtApi.sourcelink.json
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
@@ -157,4 +161,3 @@ C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\refint\JwtApi.dll
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\JwtApi.pdb
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\JwtApi.genruntimeconfig.cache
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\ref\JwtApi.dll
-C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

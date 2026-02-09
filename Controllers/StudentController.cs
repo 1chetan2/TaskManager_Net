@@ -33,8 +33,8 @@ namespace JwtApi.Controllers
             if (!string.IsNullOrEmpty(searchString))
             {
                 query = query.Where(s =>
-                    s.StudentName.Contains(searchString) ||
-                    s.Email.Contains(searchString) ||
+                    s.StudentName.Contains(searchString)    ||
+                    s.Email.Contains(searchString)    ||
                     s.Course.Contains(searchString));
             }
 
@@ -133,4 +133,3 @@ namespace JwtApi.Controllers
         }
     }
 }
-/*base on this end points create ui for dashbord*/

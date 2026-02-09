@@ -135,5 +135,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JwtApi.Controllers.TaskItemController",
+    "Method": "Create",
+    "RelativePath": "api/TaskItem",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "JwtApi.DTOs.TaskItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

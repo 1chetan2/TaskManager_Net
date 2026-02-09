@@ -1,6 +1,7 @@
 ﻿using JwtApi.Data;
 using JwtApi.DTOs;
 using JwtApi.Models;
+using JwtApi.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -16,29 +17,49 @@ namespace JwtApi.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IConfiguration _config;
+        private readonly EmailService _emailService;
 
-        public AuthController(AppDbContext context, IConfiguration config)
+        public AuthController(
+            AppDbContext context,
+            IConfiguration config,
+            EmailService emailService)
         {
             _context = context;
             _config = config;
+            _emailService = emailService;
         }
 
         // Register Process
         [HttpPost("register")]
-        public IActionResult Register(RegisterDto dto)
+        public async Task<IActionResult> Register(RegisterDto dto)
         {
             var user = new Usertb
             {
                 Email = dto.Email
             };
+
             var hasher = new PasswordHasher<Usertb>();
             user.PasswordHash = hasher.HashPassword(user, dto.Password);
 
             _context.Usertbs.Add(user);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
-            return Ok("User Registered");
+            // Send welcome email (safe execution)
+            try
+            {
+                await _emailService.SendEmailAsync(
+                    dto.Email,
+                    "Account Created",
+                    "User account created successfully."
+                );
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Email sending failed: {ex.Message}");
+            }
+            return Ok(new { message = "User registered successfully" });
         }
+
 
         // Login
         [HttpPost("login")]
@@ -46,14 +67,14 @@ namespace JwtApi.Controllers
         {
             var user = _context.Usertbs.FirstOrDefault(x => x.Email == dto.Email);
             if (user == null) return Unauthorized();
-                    
+
             var hasher = new PasswordHasher<Usertb>();
             var result = hasher.VerifyHashedPassword(user, user.PasswordHash, dto.Password);
 
             if (result == PasswordVerificationResult.Failed)
                 return Unauthorized();
 
-           var token = GenerateJwtToken(user);
+            var token = GenerateJwtToken(user);
             return Ok(token);
         }
 
@@ -82,4 +103,3 @@ namespace JwtApi.Controllers
         }
     }
 }
-
