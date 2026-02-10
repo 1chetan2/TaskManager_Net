@@ -161,3 +161,4 @@ C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\refint\JwtApi.dll
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\JwtApi.pdb
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\JwtApi.genruntimeconfig.cache
 C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\ref\JwtApi.dll
+C:\Asp.net_task\JwtApi\JwtApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

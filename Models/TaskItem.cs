@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿/*master table*/
+
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace JwtApi.Models
 {
@@ -21,3 +24,7 @@ namespace JwtApi.Models
         public TaskChild TaskStatus { get; set; }
     }
 }
+
+
+
+

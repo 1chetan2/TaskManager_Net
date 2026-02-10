@@ -15,5 +15,7 @@ namespace JwtApi.Models
         public string StatusValue { get; set; }
 
         public TaskItem TaskItem { get; set; }
+
+   
     }
 }

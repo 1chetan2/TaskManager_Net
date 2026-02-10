@@ -138,6 +138,16 @@
   },
   {
     "ContainingType": "JwtApi.Controllers.TaskItemController",
+    "Method": "GetAllTasks",
+    "RelativePath": "api/TaskItem",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JwtApi.Controllers.TaskItemController",
     "Method": "Create",
     "RelativePath": "api/TaskItem",
     "HttpMethod": "POST",

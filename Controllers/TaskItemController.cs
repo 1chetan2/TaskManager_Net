@@ -1,6 +1,6 @@
 ﻿using JwtApi.DTOs;
 using JwtApi.Models;
-using JwtApi.Data;   // IMPORTANT
+using JwtApi.Data;   
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +15,30 @@ namespace JwtApi.Controllers
         public TaskItemController(AppDbContext context)
         {
             _context = context;
+        }
+        //[HttpGet]
+        //public IActionResult GetAllTasks()
+        //{
+        //    var tasks = _context.TaskItems.ToList();
+        //    return Ok(tasks);
+        //}
+
+        [HttpGet]
+        public IActionResult GetAllTasks()
+        {
+            var tasks = _context.TaskItems
+                .Include(t => t.TaskStatus)
+                .Select(t => new TaskItemDto
+                {
+                    Date = t.Date,
+                    TaskName = t.TaskName,
+                    Task = t.Task,
+                    Hours = t.Hours,
+                    StatusValue = t.TaskStatus.StatusValue
+                })
+                .ToList();
+
+            return Ok(tasks);
         }
 
         [HttpPost]
@@ -42,5 +66,8 @@ namespace JwtApi.Controllers
 
             return Ok("Task created successfully");
         }
+
+  
+
     }
 }
